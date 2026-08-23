@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Combined styles for the navigation and form -->
+    <link rel="stylesheet" href="css/register.css">
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Shared Website Header Element -->
+    <header class="main-header">
+        <div class="website-title">
+            <span class="logo">📚</span>
+            <h1>E-Book Management System</h1>
+        </div>
+    </header>
+
+    <!-- Global Navigation System Bar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            📚 E-Book Store
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="catalogue.html">Catalog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="registration.html">Register</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-md-8 col-lg-6">
+
+            <h2 class="text-center mb-4">
+                Registration
+            </h2>
+
+            <form>
+
+                <div class="mb-3">
+                    <label class="form-label">
+                        Full Name
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Enter your name">
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">
+                        Email
+                    </label>
+
+                    <input type="email"
+                           class="form-control"
+                           placeholder="Enter your email">
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">
+                        Password
+                    </label>
+
+                    <input type="password"
+                           class="form-control"
+                           placeholder="Enter password">
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">
+                        Mobile Number
+                    </label>
+
+                    <input type="tel"
+                           class="form-control"
+                           placeholder="Enter mobile number">
+                </div>
+
+                
+            <div class="form-group">
+                <label for="range">Range</label>
+                <input type="range" id="range" name="range">
+            </div>
+
+            <div class="form-group">
+                <label for="week">Week</label>
+                <input type="week" id="week" name="week">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="month">Month</label>
+                <input type="month" id="month" name="month">
+            </div>
+
+            <div class="form-group">
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time">
+            </div>
+
+            <div class="form-group">
+                <label for="file">Upload File</label>
+                <input type="file" id="file" name="file">
+            </div>
+
+            <div class="form-group">
+                <label for="search">Search</label>
+                <input type="search" id="search" name="search" placeholder="Search">
+            </div>
+
+            <div class="form-group">
+                <label for="url">Website URL</label>
+                <input type="url" id="url" name="url" placeholder="https://example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="color">Favourite Colour</label>
+                <input type="color" id="color" name="color">
+            </div>
+
+            <div class="choice-section">
+                <p class="choice-title">Checkbox</p>
+                <label class="inline-option">
+                    <input type="checkbox" name="agreement">
+                    I Agree
+                </label>
+            </div>
+
+            <div class="choice-section">
+                <p class="choice-title">Radio</p>
+                <div class="radio-group">
+                    <label class="inline-option">
+                        <input type="radio" name="course" value="html"> HTML
+                    </label>
+                    <label class="inline-option">
+                        <input type="radio" name="course" value="css"> CSS
+                    </label>
+                    <label class="inline-option">
+                        <input type="radio" name="course" value="javascript"> JavaScript
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date">
+            </div>
+
+            <div class="form-group">
+                <label for="number">Number</label>
+                <input type="number" id="number" name="number">
+            </div>
+
+            <div class="form-group">
+                <label for="state">State</label>
+                <select id="state" name="state">
+                    <option value="">Select State</option>
+                    <option value="telangana">Telangana</option>
+                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="tamil-nadu">Tamil Nadu</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <input type="submit" value="Register">
+                <input type="reset" value="Reset">
+            </div>
+
+
+                
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+    
+
+    <footer>
+        <p>© 2026 E-Book Management System</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* Center the entire layout on the page using Flexbox */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Takes full viewport height */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Center all texts and elements inside the calculator box */
+.calculator {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Arrange operational buttons neatly in a centered row */
+.operation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.operation-buttons button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}

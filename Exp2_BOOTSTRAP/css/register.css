@@ -1,0 +1,632 @@
+/* ==========================================================================
+   1. GLOBAL SYSTEM LAYOUT & THEME RESET
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. SITE HEADERS & STICKY GLOBAL NAVIGATION BAR
+   ========================================================================== */
+.main-header {
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.website-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.website-title h1 {
+    font-size: 26px;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #2c3e50;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 16px 24px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar a:hover, 
+.navbar a.active {
+    background-color: #34495e;
+    color: #3498db;
+}
+
+/* ==========================================================================
+   3. REGISTRATION CARD & FORM GRID FRAMEWORK
+   ========================================================================== */
+.register-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    max-width: 700px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+.register-box h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 15px;
+}
+
+/* Organise form controls into two dynamic columns */
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 24px;
+}
+
+/* Force standard groups to flex vertically */
+.form-group, 
+.choice-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Expand vital user credential fields to span the full line */
+.form-group:nth-of-type(1), /* Name */
+.form-group:nth-of-type(2), /* Email */
+.form-group:nth-of-type(3), /* Password */
+.choice-section,
+.button-group {
+    grid-column: span 2;
+}
+
+/* Typography settings for field tags */
+label, 
+.choice-title {
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-transform: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   4. FORM FIELDS & COMPONENT STYLING (TEXT, DATES, DROPDOWNS)
+   ========================================================================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #334155;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, 
+select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+/* ==========================================================================
+   5. SPECIALIZED ADVANCED HTML5 INPUT TYPES
+   ========================================================================== */
+/* Range Input Layout */
+input[type="range"] {
+    width: 100%;
+    margin: 14px 0;
+    cursor: pointer;
+}
+
+/* File Upload Field Customizer */
+input[type="file"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    background: #f8fafc;
+    cursor: pointer;
+}
+
+/* Color Picker Module Customizer */
+input[type="color"] {
+    -webkit-appearance: none;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    width: 100%;
+    height: 46px;
+    cursor: pointer;
+    background: none;
+    padding: 2px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   6. INTERACTIVE SELECTION CHECKBOXES & RADIO SECTIONS
+   ========================================================================== */
+.choice-section {
+    background-color: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 4px;
+}
+
+.inline-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    color: #334155;
+}
+
+.inline-option input[type="checkbox"],
+.inline-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #3498db; /* Colors checkboxes automatically */
+}
+
+/* ==========================================================================
+   7. DUAL ACTION REGISTRATION SUBMISSION BUTTONS
+   ========================================================================== */
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 15px;
+}
+
+input[type="submit"], 
+input[type="reset"] {
+    flex: 1;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+input[type="submit"] {
+    background-color: #2ecc71;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(46, 204, 113, 0.15);
+}
+
+input[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+input[type="reset"] {
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+
+input[type="reset"]:hover {
+    background-color: #cbd5e1;
+}
+
+input[type="submit"]:active, 
+input[type="reset"]:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   8. FOOTER STYLING
+   ========================================================================== */
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #2c3e50;
+    color: #94a3b8;
+    padding: 15px 0;
+    font-size: 14px;
+    margin-top: auto; /* Attaches footer to layout viewport base */
+}
+
+/* ==========================================================================
+   9. RESPONSIVE MEDIA BREAKPOINTS (MOBILE DISPLAYS)
+   ========================================================================== */
+@media (max-width: 640px) {
+    form {
+        grid-template-columns: 1fr; /* Collapse form into single column layout */
+    }
+    
+    .form-group, 
+    .choice-section {
+        grid-column: span 1 !important;
+    }
+    
+    .register-box {
+        padding: 24px;
+        margin: 20px auto;
+    }
+    
+    .button-group {
+        flex-direction: column; /* Stack Register and Reset elements */
+    }
+}
+
+
+/* ==========================================================================
+   10. E-BOOK CATALOG GRID & BOOK CARD COMPONENT MODULES
+   ========================================================================== */
+
+/* Main layout wrapper wrapper for the catalog content */
+.catalog-container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.catalog-container h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.page-description {
+    color: #64748b;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+/* 3-Column Automatic Fitting Grid Container */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* Premium Card Architecture */
+.book-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Subtle elevation movement effect when hovered */
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Uniform Cover Image Layout Settings */
+.book-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover; /* Prevents raw imagery distortion or layout squishing */
+    border-radius: 8px;
+    margin-bottom: 18px;
+    background-color: #f8fafc;
+}
+
+/* Card Text Elements Typography */
+.book-card h3 {
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.book-card .author {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.book-card .price {
+    color: #e74c3c;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* "Add to Cart" Action Execution Design */
+.book-card .cart-button {
+    width: 100%;
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    padding: 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none; /* Safe-guard fallback logic for alternative <a> tags */
+    display: block;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 6px rgba(231, 76, 60, 0.15);
+}
+
+.book-card .cart-button:hover {
+    background-color: #c0392b;
+}
+
+.book-card .cart-button:active {
+    transform: scale(0.98);
+}
+/* ==========================================================================
+   11. SHOPPING CART DASHBOARD & TABULAR SUMMARY LAYOUTS
+   ========================================================================== */
+
+/* Main content structure area */
+.cart-container {
+    max-width: 1100px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+.cart-container h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* Responsive Table Wrapper Guard */
+.cart-table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Ensures tables don't break wide screens on phones */
+    margin-bottom: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+/* Core Cart Table Formatting */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.cart-table th, 
+.cart-table td {
+    padding: 16px 20px;
+    vertical-align: middle;
+}
+
+.cart-table th {
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cart-table tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background-color 0.2s ease;
+}
+
+.cart-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.cart-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Tiny Thumbnail Cover Graphics inside cells */
+.cart-table img {
+    width: 60px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+/* Numeric Steps Quantity Modifier fields */
+.cart-table input[type="number"] {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    text-align: center;
+    color: #334155;
+    outline: none;
+}
+
+.cart-table input[type="number"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+/* ==========================================================================
+   12. BILLING CALCULATION SUMMARY CARD & ACTION MODULE
+   ========================================================================== */
+.cart-summary {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 120px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    max-width: 450px;
+    width: 100%;
+    margin-left: auto; /* Aligns billing statement block cleanly to the right */
+}
+
+.cart-summary h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.cart-summary p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.cart-summary p strong {
+    color: #1e293b;
+}
+
+/* Distinct Highlighted Highlight for checkout totals */
+.cart-summary .grand-total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #e2e8f0;
+}
+
+.cart-summary .grand-total strong {
+    color: #e74c3c;
+    font-size: 22px;
+}
+
+/* Operational Action Link Grid blocks */
+.cart-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* Secondary Return Links configuration */
+.continue-button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #e2e8f0;
+    color: #4a5568;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.continue-button:hover {
+    background-color: #cbd5e1;
+}
+
+/* Primary Execution Button */
+.checkout-button {
+    width: 100%;
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(46, 204, 113, 0.15);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.checkout-button:hover {
+    background-color: #27ae60;
+}
+
+.checkout-button:active, 
+.continue-button:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   13. TABLETS AND MOBILE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .cart-summary {
+        max-width: 100%; /* Expands calculation block to fill viewport full width */
+        margin-left: 0;
+    }
+    
+    .cart-table th, 
+    .cart-table td {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+}
