@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="JavaScript/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+    <div>📚</div>
+    <h2>E-BOOK LIBRARY LOGIN</h2>
+</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="./login.html" class="active">Login</a></li>
+                <li><a href="./registration.html" >Register</a></li>
+                <li><a href="./cart.html" >Cart</a></li>
+                <li><a href="./catalog.html" >Catalog</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        <!--login container-->
+        <div class="login-container">
+
+    <div class="login-image">
+        <img src="./images/book.jpg" alt="Book">
+        <p>Access thousands of e-books anytime, anywhere.</p>
+    </div>
+    <!--login form-->
+        
+        <div class="center">
+            <form class="form" onsubmit="return loginValidity()">
+    <h2>Login</h2>
+
+    <input type="email" id="loginEmail" placeholder="Email">
+
+    <input type="password" id="loginPassword" placeholder="Password">
+
+    <button type="submit">Login</button>
+
+    <p>Not Registered?
+        <a href="registration.html">Click Here</a>
+    </p>
+</form>
+            <footer>
+        @ BHUDEVI TAMMISHETTY | Copyright | E-Management System
+    </footer>
+        </div>            
+    
+</body>
+</html>

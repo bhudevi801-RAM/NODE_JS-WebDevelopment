@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="JavaScript/script.js"></script>
+</head>
+<body>
+    <header>
+         <div class="logo">
+    <div>📚</div>
+    <h2>E-BOOK LIBRARY </h2>
+</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./registration.html" class="active">Register</a></li>
+                <li><a href="./cart.html">Cart</a></li>
+                <li><a href="./catalog.html" >Catalog</a></li>
+            </ul>
+        </nav>
+</header>
+        <main> 
+
+        <div class="register-container">
+                <form class="form" onsubmit="return validateRegistration()">
+    <h2>Register</h2>
+
+    <input id="name" placeholder="Name">
+
+    <input id="email" type="email" placeholder="Email">
+
+    <input id="mobile" type="tel" placeholder="Mobile">
+
+    <select id="gender">
+        <option value="">Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+
+    <input id="password" type="password" placeholder="Password">
+
+    <textarea id="address" placeholder="Address"></textarea>
+
+    <button type="submit">Register</button>
+
+    <p>Already registered? <a href="login.html">Login</a></p>
+</form>
+            
+        </div>
+        </main>
+        <footer>
+        @ BHUDEVI TAMMISHETTY | Copyright | E-Management System
+    </footer>      
+</body>
+</html>
